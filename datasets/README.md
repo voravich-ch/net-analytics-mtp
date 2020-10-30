@@ -1,2 +1,2 @@
 # Dataset
--   [SNAP: Network datasets: Social circles (Facebook)](http://snap.stanford.edu/data/ego-Facebook.html)
+-   [Kaggle: Star Wars Social Network](https://www.kaggle.com/ruchi798/star-wars)
