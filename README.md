@@ -49,6 +49,38 @@ Commu 12: [40, 41, 42]
 
 Commu x: [76]
 ```
+
+## Result: Infomap model 
+
+- Number of communities: 12 (One isolated node)
+```
+Commu 1: 
+['QUI-GON', 'OBI-WAN', 'EMPEROR', 'CAPTAIN PANAKA', 'SIO BIBBLE', 'JAR JAR', 'TARPALS', 'BOSS NASS', 'PADME', 'WATTO', 'ANAKIN', 'SEBULBA', 'JIRA', 'SHMI', 'KITSTER', 'WALD', 'FODE/BEED', 'GREEDO', 'VALORUM', 'MACE WINDU', 'KI-ADI-MUNDI', 'YODA', 'RABE', 'BAIL ORGANA', 'CAPTAIN TYPHO', 'SENATOR ASK AAK', 'ORN FREE TAA', 'LAMA SU', 'COUNT DOOKU', 'PLO KOON', 'ODD BALL', 'GENERAL GRIEVOUS', 'CLONE COMMANDER GREE', 'CLONE COMMANDER CODY', 'TION MEDON', 'CAPTAIN ANTILLES']
+Commu 2: 
+['C-3PO', 'JABBA', 'LUKE', 'LEIA', 'HAN', 'RIEEKAN', 'DERLIN', 'ZEV', 'DACK', 'LANDO', 'BIB FORTUNA', 'BOUSHH', 'ADMIRAL ACKBAR', 'CAPTAIN PHASMA', 'FINN', 'UNKAR PLUTT', 'REY', 'BALA-TIK', 'MAZ', 'BB-8', 'ADMIRAL STATURA']
+Commu 3: 
+['NUTE GUNRAY', 'PK-4', 'TC-14', 'DOFINE', 'RUNE', 'TEY HOW', 'DARTH MAUL', 'GENERAL CEEL', 'SUN RIT', 'POGGLE']
+Commu 4: 
+['DARTH VADER', 'MOTTI', 'TARKIN', 'PIETT', 'OZZEL', 'NEEDA', 'JERJERROD']
+Commu 5: 
+['LOR SAN TEKKA', 'POE', 'SNAP', 'YOLO ZIFF', 'ELLO ASTY', 'JESS', 'NIV LEK']
+Commu 6: 
+['CAMIE', 'BIGGS', 'DODONNA', 'GOLD LEADER', 'WEDGE', 'RED LEADER', 'RED TEN', 'JANSON']
+Commu 7: 
+['OWEN', 'BERU', 'CLIEGG']
+Commu 8: 
+['KYLO REN', 'GENERAL HUX', 'LIEUTENANT MITAKA', 'SNOKE', 'COLONEL DATOO']
+Commu 9: 
+['RIC OLIE', 'BRAVO TWO', 'BRAVO THREE']
+Commu 10: 
+['TAUN WE', 'BOBA FETT', 'JANGO FETT']
+Commu 11: 
+['FANG ZAR', 'MON MOTHMA', 'GIDDEAN DANU']
+Commu 12: 
+['SOLA', 'JOBAL', 'RUWEE']
+Commu x: 
+['GOLD FIVE']
+```
 # Reference
 
 This table shows which episode(s) each character was in the movie. 
