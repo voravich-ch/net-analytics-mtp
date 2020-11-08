@@ -1,7 +1,7 @@
+import os
 import collections
 import numpy as np
 import matplotlib.pyplot as plt
-import pathlib
 import networkx as nx
 import itertools
 from networkx.algorithms.community import girvan_newman, modularity
@@ -64,11 +64,11 @@ def girvan_newman_detection(G):
     ax.set_ylabel(r'Modularity score')
     
     # save plot
-    pathlib.Path("output").mkdir(exist_ok=True)
-    plt.savefig("output/modularity_plot_{}.png".format(G.name))
+    path = os.path.join('output', 'modularity_plot_{}.png'.format(G.name))
+    plt.savefig(path)
     
     plt.show()
-    print("The image was saved to: `output/modularity_plot_{}.png`".format(G.name))
+    print("The plot was saved to: `{}`".format(path))
     
     # process data for analysis
     communities = {}
@@ -93,9 +93,9 @@ def infomap_community_detection(G):
     sources = np.array(G.edges).T[0]
     targets = np.array(G.edges).T[1]
     weights = nx.get_edge_attributes(G, 'weight').values()
-    if nx.is_weighted(G):
+    if nx.is_weighted(G) == True:
         edges = zip(sources, targets, weights)
-    else:
+    elif nx.is_weighted(G) == False:
         edges = zip(sources, targets)
     im.add_links(edges)
     

@@ -30,6 +30,8 @@ def load_starwars_graph():
 
     # populate the graph with nodes
     G.add_nodes_from(nodes_list)
+    # add name attribute
+    nx.set_node_attributes(G, df_nodes.name, name = 'name')
 
     # populate the graph with edges
     G.add_weighted_edges_from(weighted_edges_list, weight = 'weight')
