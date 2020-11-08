@@ -6,7 +6,11 @@ import networkx as nx
 import itertools
 from networkx.algorithms.community import girvan_newman, modularity
 from networkx import edge_betweenness_centrality as betweenness
+from networkx.algorithms.community import greedy_modularity_communities
+import community as community_louvain
 import infomap
+import igraph as ig
+import leidenalg
 
 def girvan_newman_detection(G):
     
@@ -22,13 +26,16 @@ def girvan_newman_detection(G):
         solutions = girvan_newman(G)
     
     # assign the number of times partitioning
-    k = 30
+    k = len(G.edges)
     
     # register modularity scores
     modularity_scores = dict()
 
     # initiate a maximum modularity score
     max_score = 0
+    
+    # initiate count (stopping criterion)
+    count = 0
 
     # iterate over solutions
     for community in itertools.islice(solutions, k):
@@ -40,13 +47,18 @@ def girvan_newman_detection(G):
             # save the community structure with highest modularity score
             community_structure = list(solution)
             max_score = score
+            count = 0
+        else:
+            count = count + 1
+        if count == 5:
+            break
     
     # get the number of isolated nodes
     num_isolated_nodes = [len(i) for i in community_structure].count(1)
     
     # report the result
-    print("Weighted Girvan-Newman Community Detection")
-    print("------------------------------------------")
+    print("Girvan-Newman Community Detection")
+    print("---------------------------------")
     if num_isolated_nodes == 0:
         print("Number of communities detected: {}".format(len(community_structure)))
     else:
@@ -64,7 +76,7 @@ def girvan_newman_detection(G):
     ax.set_ylabel(r'Modularity score')
     
     # save plot
-    path = os.path.join('output', 'modularity_plot_{}.png'.format(G.name))
+    path = os.path.join('output', 'gn_modularity_plot_{}.png'.format(G.name))
     plt.savefig(path)
     
     plt.show()
@@ -80,7 +92,62 @@ def girvan_newman_detection(G):
     return communities
 
 
-def infomap_community_detection(G):
+def clauset_newman_moore_detection(G):
+    
+    # fit the model
+    if nx.is_weighted(G):
+        c = greedy_modularity_communities(G, weight = 'weight')
+    else:
+        c = greedy_modularity_communities(G)
+        
+    # format the result
+    communities = {}
+    for node in G.nodes():
+        for index, commu in enumerate(c):
+            if node in sorted(commu):
+                communities[node] = index
+    
+    # get the number of isolated nodes
+    freq_dict = collections.Counter(communities.values())
+    num_isolated_nodes = list(freq_dict.values()).count(1)
+    
+    # report the result
+    print("Clauset-Newman-Moore Community Detection")
+    print("----------------------------------------")
+    if num_isolated_nodes == 0:
+        print("Number of communities detected: {}".format(len(freq_dict.keys())))
+    else:
+        print("Number of communities detected: {}".format(len(freq_dict.keys()) - num_isolated_nodes))
+        print("Number of nodes not in any community: {}".format(num_isolated_nodes))
+    
+    return communities
+    
+
+def louvain_detection(G):
+    
+    # fit the model
+    if nx.is_weighted(G):
+        communities = community_louvain.best_partition(G, weight = 'weight')
+    else:
+        communities = community_louvain.best_partition(G)
+    
+    # get the number of isolated nodes
+    freq_dict = collections.Counter(communities.values())
+    num_isolated_nodes = list(freq_dict.values()).count(1)
+    
+    # report the result
+    print("Louvain Community Detection")
+    print("---------------------------")
+    if num_isolated_nodes == 0:
+        print("Number of communities detected: {}".format(len(freq_dict.keys())))
+    else:
+        print("Number of communities detected: {}".format(len(freq_dict.keys()) - num_isolated_nodes))
+        print("Number of nodes not in any community: {}".format(num_isolated_nodes))
+    
+    return communities
+
+
+def infomap_detection(G):
     
     # initiate an infomap object
     im = infomap.Infomap()
@@ -119,3 +186,46 @@ def infomap_community_detection(G):
         print("Number of nodes not in any community: {}".format(num_isolated_nodes))
                 
     return communities
+
+
+def leiden_detection(G):
+    
+    # initiate an igraph object
+    g = ig.Graph()
+    
+    # add vertices
+    g.add_vertices(G.nodes)
+    
+    # add edges
+    g.add_edges(G.edges)
+    
+    # add weights
+    if nx.is_weighted(G): 
+        g.es['weight'] = list(nx.get_edge_attributes(G, 'weight').values())
+    
+    # fit the model
+    partition = leidenalg.find_partition(g, leidenalg.ModularityVertexPartition)
+    
+    # format the result
+    communities = {}
+    for node in G.nodes():
+        for index, commu in enumerate(partition):
+            if node in commu:
+                communities[node] = index
+    
+    # get the number of isolated nodes
+    freq_dict = collections.Counter(communities.values())
+    num_isolated_nodes = list(freq_dict.values()).count(1)
+    
+    # report the result
+    print("Leiden Community Detection")
+    print("---------------------------")
+    if num_isolated_nodes == 0:
+        print("Number of communities detected: {}".format(len(partition)))
+    else:
+        print("Number of communities detected: {}".format(len(partition) - num_isolated_nodes))
+        print("Number of nodes not in any community: {}".format(num_isolated_nodes))
+    
+    return communities
+
+                
