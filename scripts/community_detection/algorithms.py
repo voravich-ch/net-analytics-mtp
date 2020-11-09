@@ -1,3 +1,12 @@
+"""""""""""""""""""""""""""""""""""""""""""""""
+|    SMM638: Network Analytics - Group 7      |
+|---------------------------------------------|
+| This python script contains functions       |
+| to perform community detection algorithms   |
+|                                             |
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+
 import os
 import collections
 import numpy as np
@@ -88,8 +97,11 @@ def girvan_newman_detection(G):
         for index, commu in enumerate(community_structure):
             if node in commu:
                 communities[node] = index
-                
-    return communities
+    # return result            
+    out = {'algo': 'Girvan-Newman',
+          'communities': communities}    
+    
+    return out
 
 
 def clauset_newman_moore_detection(G):
@@ -120,7 +132,11 @@ def clauset_newman_moore_detection(G):
         print("Number of communities detected: {}".format(len(freq_dict.keys()) - num_isolated_nodes))
         print("Number of nodes not in any community: {}".format(num_isolated_nodes))
     
-    return communities
+    # return result
+    out = {'algo': 'Clauset-Newman-Moore',
+          'communities': communities}    
+    
+    return out
     
 
 def louvain_detection(G):
@@ -144,7 +160,11 @@ def louvain_detection(G):
         print("Number of communities detected: {}".format(len(freq_dict.keys()) - num_isolated_nodes))
         print("Number of nodes not in any community: {}".format(num_isolated_nodes))
     
-    return communities
+    # return result
+    out = {'algo': 'Louvain',
+          'communities': communities}    
+    
+    return out
 
 
 def infomap_detection(G):
@@ -184,8 +204,12 @@ def infomap_detection(G):
     else:
         print("Number of communities detected: {}".format(im.num_top_modules - num_isolated_nodes))
         print("Number of nodes not in any community: {}".format(num_isolated_nodes))
-                
-    return communities
+    
+    # return result
+    out = {'algo': 'Infomap',
+          'communities': communities}    
+    
+    return out
 
 
 def leiden_detection(G):
@@ -226,6 +250,10 @@ def leiden_detection(G):
         print("Number of communities detected: {}".format(len(partition) - num_isolated_nodes))
         print("Number of nodes not in any community: {}".format(num_isolated_nodes))
     
-    return communities
+    # return result
+    out = {'algo': 'Leiden',
+          'communities': communities}    
+    
+    return out
 
                 

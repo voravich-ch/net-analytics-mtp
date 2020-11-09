@@ -1,13 +1,26 @@
+"""""""""""""""""""""""""""""""""""""""""""""""
+|    SMM638: Network Analytics - Group 7      |
+|---------------------------------------------|
+| This python script contains a function      |
+| to plot 3d network graph                    |
+|                                             |
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+
 import os
 import numpy as np
 import networkx as nx
 import plotly.offline as py
 import plotly.graph_objs as go
 
-def plot_3d(G, communities, algo = ''):
+def plot_3d(G, community_structure):
     
     # set seed for coordinate
     np.random.seed(7)
+    
+    # set-up
+    algo = community_structure['algo']
+    communities = community_structure['communities']
     
     # get nodes name and its corresponding community as well as degrees
     labels = []

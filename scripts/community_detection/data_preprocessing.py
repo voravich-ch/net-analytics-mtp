@@ -1,3 +1,12 @@
+"""""""""""""""""""""""""""""""""""""""""""""""
+|    SMM638: Network Analytics - Group 7      |
+|---------------------------------------------|
+| This python script contains a function      |
+| to load and process Star-Wars network graph |
+|                                             |
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+
 import os
 import json
 import pandas as pd
