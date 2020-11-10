@@ -49,4 +49,3 @@ def load_starwars_graph():
     print(nx.info(G))
     
     return G
-    
