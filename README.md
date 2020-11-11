@@ -234,4 +234,5 @@ This table shows which episode(s) each character was in the movie.
 -   [From Louvain to Leiden: Guaranteeing well-connected communities](https://www.nature.com/articles/s41598-019-41695-z) 
 -   [Fast unfolding of communities in large networks](https://arxiv.org/abs/0803.0476) 
 -   [Community Detection in Who-calls-Whom Social Networks](https://link.springer.com/chapter/10.1007/978-3-319-98539-8_2) 
+-   [Community structures and role detection in music networks](https://aip.scitation.org/doi/abs/10.1063/1.2988285) 
 
