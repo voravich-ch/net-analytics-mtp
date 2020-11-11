@@ -20,7 +20,7 @@ Overview
         │   ├── starwars-episode-6-interactions.json
         │   ├── starwars-episode-7-interactions.json
         │   └── README.md
-        └── script
+        └── scripts
             ├── 00_data_exploration.ipynb
             ├── 01_star_wars_community_detection.ipynb
             ├── 02_null_case_community_detection.ipynb
