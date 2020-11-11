@@ -170,7 +170,7 @@ def louvain_detection(G):
 def infomap_detection(G):
     
     # initiate an infomap object
-    im = infomap.Infomap()
+    im = infomap.Infomap("--two-level")
     
     # add nodes
     im.add_nodes(G.nodes)

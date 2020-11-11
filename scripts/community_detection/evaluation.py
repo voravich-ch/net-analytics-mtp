@@ -166,8 +166,8 @@ def qualitative_evaluation(G, commu_list):
     summary = sorted(result.values())
     df = pd.DataFrame(summary)
     df = df.loc[df.astype(str).drop_duplicates().index].rename(columns = {0: 'metric',
-                                                                          1: 'community ( U - I )',
-                                                                          2: 'unmatched ( I )'})
+                                                                          1: 'community ( I )',
+                                                                          2: 'unmatched ( U - I )'})
     
     return df
 
