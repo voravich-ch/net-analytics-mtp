@@ -224,4 +224,14 @@ This table shows which episode(s) each character was in the movie.
 ```
 
 ## **Reference**
--   [Article Name](link) 
+-   [Community detection in Social Media](https://0-www-proquest-com.wam.city.ac.uk/docview/928388728?OpenUrlRefId=info:xri/sid:summon&accountid=14510) 
+-   [A Distributed Infomap Algorithm for Scalable and High-Quality Community Detection](https://dl.acm.org/doi/10.1145/3225058.3225137) 
+-   [A new algorithm CNM-Centrality of detecting communities based on node centrality](https://www.sciencedirect.com/science/article/abs/pii/S0378437115009425) 
+-   [Detecting community structure in networks](https://link.springer.com/article/10.1140/epjb/e2004-00124-y) 
+-   [Fast algorithm for detecting community structure in networks](https://arxiv.org/abs/cond-mat/0309508) 
+-   [PARC: ultrafast and accurate clustering of phenotypic data of millions of single cells](https://academic.oup.com/bioinformatics/article/36/9/2778/5714737) 
+-   [Dynamic Clustering in Social Networks using Louvain and Infomap Method](https://arxiv.org/abs/1603.02413) 
+-   [From Louvain to Leiden: Guaranteeing well-connected communities](https://www.nature.com/articles/s41598-019-41695-z) 
+-   [Fast unfolding of communities in large networks](https://arxiv.org/abs/0803.0476) 
+-   [Community Detection in Who-calls-Whom Social Networks](https://link.springer.com/chapter/10.1007/978-3-319-98539-8_2) 
+
