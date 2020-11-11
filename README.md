@@ -1,9 +1,92 @@
-# MSc Business Analytics at Cass Business School 2020/21
+# **SMM638 - Network Analytics (Midterm Project)**
 
-This repository contains files for Network Analytics Midterm Project
+## **Overview**
+Overview
+
+## **Directory Structure**
 
 
-## Result: Infomap model 
+```
+        net-analytics-mtp
+        ├── README.md
+        ├── requirement.txt
+        ├── datasets
+        │   ├── starwars-full-interactions.json
+        │   ├── starwars-episode-1-interactions.json
+        │   ├── starwars-episode-2-interactions.json
+        │   ├── starwars-episode-3-interactions.json
+        │   ├── starwars-episode-4-interactions.json
+        │   ├── starwars-episode-5-interactions.json
+        │   ├── starwars-episode-6-interactions.json
+        │   ├── starwars-episode-7-interactions.json
+        │   └── README.md
+        └── script
+            ├── 00_data_exploration.ipynb
+            ├── 01_star_wars_community_detection.ipynb
+            ├── 02_null_case_community_detection.ipynb
+            ├── community_detection
+            |   ├── __init__.py
+            |   ├── algorithms.py
+            |   ├── data_preprocessing.py
+            |   ├── evaluation.py
+            |   ├── timeit_functions.py
+            |   └── visualize.py
+            └── output
+                ├── gn_modularity_plot_Erdős-Rényi.png
+                ├── gn_modularity_plot_Star-Wars.png
+                ├── viz_erdős-rényi_clauset-newman-moore.html
+                ├── viz_erdős-rényi_girvan-newman.html
+                ├── viz_erdős-rényi_infomap.html
+                ├── viz_erdős-rényi_leiden.html
+                ├── viz_erdős-rényi_louvain.html
+                ├── viz_star-wars_clauset-newman-moore.html
+                ├── viz_star-wars_girvan-newman.html
+                ├── viz_star-wars_infomap.html
+                ├── viz_star-wars_leiden.html
+                └── viz_star-wars_louvain.html
+
+```
+
+## File Description
+### datasets
+-   `starwars-full-interactions.json` -> Json file contains all nodes and edges from Star-Wars episode 1-7
+-   `starwars-episode-1-interactions.json` -> Json file contains nodes and edges from Star-Wars episode 1 
+-   `starwars-episode-2-interactions.json` -> Json file contains nodes and edges from Star-Wars episode 2
+-   `starwars-episode-3-interactions.json` -> Json file contans nodes and edges from Star-Wars episode 3
+-   `starwars-episode-4-interactions.json` -> Json file contains nodes and edges from Star-Wars episode 4
+-   `starwars-episode-5-interactions.json` -> Json file contains nodes and edges from Star-Wars episode 5
+-   `starwars-episode-6-interactions.json` -> Json file contains nodes and edges from Star-Wars episode 6
+-   `starwars-episode-7-interactions.json` -> Json file contains nodes and edges from Star-Wars episode 7
+
+### scripts
+-   `00_data_exploration.ipynb` -> Exploratory data analysis on Star-Wars network
+-   `01_star_wars_community_detection.ipynb` -> Network analysis on Star-Wars network
+-   `02_null_case_community_detection.ipynb` -> Network analysis on Erdős-Rényi graph (random graph)
+
+#### community_detection
+-   `algorithms.py` -> Python script contains functions to implement community detection algorithms on a 1-mode undirected graph
+-   `data_preprocessing.py` -> Python script contains a function to load and pre-process Star-Wars network graph 
+-   `evaluation.py` -> Python script contains functions to evaluate algorithms and results
+-   `timeit_functions.py` -> Python script contains functions to capture the execution time of each algorithm 
+-   `visualize.py` -> Python script contains functions to visualize 3D network graphs
+
+### output
+-   `gn_modularity_plot_Erdős-Rényi.png` -> Modularity plot from Girvan-Newman algorithm on Erdős-Rényi graph
+-   `gn_modularity_plot_Star-Wars.png` -> Modularity plot from Girvan-Newman algorithm on Star-Wars graph
+-   `viz_erdős-rényi_clauset-newman-moore.html` -> 3D plot of communities in Erdős-Rényi graph segmented by Clauset-Newman-Moore algorithm
+-   `viz_erdős-rényi_girvan-newman.html` -> 3D plot of communities in Erdős-Rényi graph segmented by Girvan-Newman algorithm
+-   `viz_erdős-rényi_infomap.html` -> 3D plot of communities in Erdős-Rényi graph segmented by Infomap algorithm
+-   `viz_erdős-rényi_leiden.html` -> 3D plot of communities in Erdős-Rényi graph segmented by Leiden algorithm
+-   `viz_erdős-rényi_louvain.html` -> 3D plot of communities in Erdős-Rényi graph segmented by Louvain algorithm
+-   `viz_star-wars_clauset-newman-moore.html` -> 3D plot of communities in Star-Wars graph segmented by Clauset-Newman-Moore algorithm
+-   `viz_star-wars_girvan-newman.html` -> 3D plot of communities in Star-Wars graph segmented by Girvan-Newman algorithm
+-   `viz_star-wars_infomap.html` -> 3D plot of communities in Star-Wars graph segmented by Infomap algorithm
+-   `viz_star-wars_leiden.html` -> 3D plot of communities in Star-Wars graph segmented by Leiden algorithm
+-   `viz_star-wars_louvain.html` -> 3D plot of communities in Star-Wars graph segmented by Louvain algorithm
+
+
+## **Example of result:**
+**Infomap model** 
 
 - Number of communities: 9 + 1 (One isolated node)
 ```
@@ -19,11 +102,9 @@ This repository contains files for Network Analytics Midterm Project
 8: ['FANG ZAR', 'MON MOTHMA', 'GIDDEAN DANU'],
 9: ['SOLA', 'JOBAL', 'RUWEE'], 
 10: ['GOLD FIVE']}
-
 ```
 
-
-# Reference
+## **Datasets insight**
 
 This table shows which episode(s) each character was in the movie. 
 ```
@@ -141,3 +222,6 @@ This table shows which episode(s) each character was in the movie.
 | 109 | NIV LEK              |      0 |      0 |      0 |      0 |      0 |      0 |      1 |
 |----:|:---------------------|-------:|-------:|-------:|-------:|-------:|-------:|-------:|
 ```
+
+## **Reference**
+-   [Article Name](link) 
