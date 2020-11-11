@@ -19,6 +19,7 @@ This dataset contains the social network of Star Wars characters extracted from 
         net-analytics-mtp
         ├── README.md
         ├── requirement.txt
+        ├── Group7SMM638.pptx
         ├── datasets
         │   ├── starwars-full-interactions.json
         │   ├── starwars-episode-1-interactions.json
@@ -57,6 +58,7 @@ This dataset contains the social network of Star Wars characters extracted from 
 ```
 
 ## File Description
+-   `Group7SMM638.pptx` -> Project presentation
 ### datasets
 -   `starwars-full-interactions.json` -> Json file contains all nodes and edges from Star-Wars episode 1-7
 -   `starwars-episode-1-interactions.json` -> Json file contains nodes and edges from Star-Wars episode 1 
