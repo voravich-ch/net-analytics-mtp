@@ -117,7 +117,7 @@ def evaluate_performance(G, commu_list):
     return performances
 
 
-def qualitative_evaluation(G, commu_list):
+def robustness_test(G, commu_list):
     
     # initiate a dictionary to store community structure
     commu_structure = {}
