@@ -113,7 +113,8 @@ This dataset contains the social network of Star Wars characters extracted from 
 7: ['RIC OLIE', 'BRAVO TWO', 'BRAVO THREE'],
 8: ['FANG ZAR', 'MON MOTHMA', 'GIDDEAN DANU'],
 9: ['SOLA', 'JOBAL', 'RUWEE'], 
-10: ['GOLD FIVE']}
+10: ['GOLD FIVE']  
+}
 ```
 
 ## **Datasets insight**
