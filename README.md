@@ -59,7 +59,7 @@ This dataset contains the social network of Star Wars characters extracted from 
 ```
 
 ## File Description
--   `requirement.txt` -> Python packages requirements
+-   `requirements.txt` -> Python packages requirements
 -   `Group7SMM638.pptx` -> Project presentation
 ### datasets
 -   `starwars-full-interactions.json` -> Json file contains all nodes and edges from Star-Wars episode 1-7
