@@ -18,7 +18,8 @@ This dataset contains the social network of Star Wars characters extracted from 
 ```
         net-analytics-mtp
         ├── README.md
-        ├── requirement.txt
+        ├── .gitignore
+        ├── requirements.txt
         ├── Group7SMM638.pptx
         ├── datasets
         │   ├── starwars-full-interactions.json
